@@ -16,10 +16,9 @@
     = f.label :price
     = f.number_field :price
   .field
-    = Image
+    Image
     = image_tag(@product.image_url) if @product.image?
     = f.file_field :image
-    #carrierwave_magic
     = f.hidden_field :image_cache
   .actions
     = f.submit 'Save'
