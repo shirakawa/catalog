@@ -17,6 +17,7 @@ end
 end
 
 ならば /^"(.*?)"の商品詳細ページが作成されていること$/ do |product_name|
+p Product.where(name: product_name).first
   visit url_for(Product.where(name: product_name).first)
   within 'p.name' do
     page.should have_content(product_name)
